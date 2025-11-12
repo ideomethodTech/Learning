@@ -1,129 +1,179 @@
-# Chat → PPT (LLM-powered Presentation Builder)
+# Chat → PPT (AI-Powered Presentation Builder)
 
-Stack: **React + Tailwind** • **FastAPI** • **Ollama (Phi3-mini)** • **python-pptx** • **Pollinations AI**
+**Stack:** React + Tailwind • FastAPI (Python) • Google Gemini 2.5 Flash-Lite API • python-pptx
+
+## Overview
+This web app automatically generates complete PowerPoint presentations (.pptx) using Google Gemini AI.  
+Users can input a topic and slide count — Gemini generates structured slide outlines and content, and the backend builds a downloadable .pptx file using `python-pptx`.
+
+## Features
+- AI text generation with Gemini 2.5 Flash-Lite (free Google API)  
+- Real-time preview before download  
+- Custom background themes (Blue / Pink / Dark / etc.)  
+- Slide content depth levels: Basic / Detailed / Comprehensive  
+- History tracking + download counter  
+- Fullstack deployment-ready (Render + Vercel)
+
+## Tech Stack
+
+| Layer        | Tech                                   |
+|--------------|----------------------------------------|
+| Frontend     | React + Tailwind CSS + Vite            |
+| Backend      | FastAPI (Python)                       |
+| AI Model     | Google Gemini 2.5 Flash-Lite           |
+| PPT Generator| python-pptx                            |
+| Database     | SQLite (for history & metrics)         |
+| Deployment   | Render (backend) + Vercel (frontend)   |
+
+## Why Gemini API?
+
+- Free for small-scale & educational projects (≈ 500–1000 req/day)  
+- High-speed text generation  
+- Supports structured content (bullets, summaries)  
+- Google-managed cloud model — no self-hosting required
 
 ---
 
-##  Features
+## Setup Instructions
 
-- AI slide generation (local Phi-3)
-- AI images via Pollinations API
-- Live preview before download
-- PPT export (.pptx)
-- Blue / Pink themes
-- History & download counter
-- FastAPI backend + React frontend
+### 1. Backend Setup
 
----
-
-## Prerequisites
-
-| Tool | Required |
-|---|---|
-| Node.js | 18+ |
-| Python | 3.10+ |
-| **Ollama** | Installed & running |
-| Model | `phi3:mini` |
-
-Install Ollama:
-
-```bash
-curl -fsSL https://ollama.ai/install.sh | sh
-ollama pull phi3:mini
-ollama serve
 ```
-
----
-
-##  Setup Instructions
-
-### **Backend**
-
-```bash
 cd backend
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+```
+
+Create a `.env` file in backend/:
+
+```
+GEMINI_API_KEY=your_google_api_key_here
+GEMINI_MODEL=gemini-2.5-flash-lite
+```
+
+Run locally:
+
+```
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
----
+Test it:
 
-### **Frontend**
+```
+curl http://localhost:8000/api/health
+```
 
-```bash
+Expected Response:
+
+```
+{
+  "ok": true,
+  "model": "gemini-2.5-flash-lite",
+  "status": "Gemini AI Connected"
+}
+```
+
+### 2. Frontend Setup
+
+```
 cd frontend
 npm install
+```
+
+Create a `.env` file in frontend/:
+
+```
+VITE_API_URL=https://chat-to-ppt-backend.onrender.com
+```
+
+Run locally:
+
+```
 npm run dev
 ```
 
-Access UI: http://localhost:5173
+Then open → http://localhost:5173
 
----
-
-## Architecture
+### Architecture
 
 ```
-React UI → FastAPI → Ollama (phi3-mini)
-                    ↓
-             Pollinations API (images)
-                    ↓
-                 .pptx file
+React (Vite + Tailwind)
+      ↓
+FastAPI Backend
+      ↓
+Google Gemini API → AI text generation
+      ↓
+python-pptx → .pptx file
 ```
 
----
+## Usage Guide
 
-##  Usage
-
-| Step | Action |
-|---|---|
-1️⃣ | Enter topic & slide count  
-2️⃣ | (Optional) Enable AI images  
-3️⃣ | Click **Preview** to see slides  
-4️⃣ | Click **Download** to get PPT  
-
----
+| Step   | Action                                      |
+|--------|---------------------------------------------|
+| 1      | Enter a topic & select slide count          |
+| 2      | Choose color theme & content depth          |
+| 3      | Click Preview to generate outline           |
+| 4      | Review slides in browser                    |
+| 5      | Click Download PPT to get your file         |
 
 ## Troubleshooting
 
-| Issue | Fix |
-|---|---|
-Ollama not responding | run `ollama serve` |
-PPT not downloading | check backend logs |
-Blank images | Pollinations rate limit — retry |
+| Issue                       | Fix                                      |
+|-----------------------------|------------------------------------------|
+| API key invalid             | Check .env in backend                    |
+| "Model not found"           | Use gemini-2.5-flash-lite                |
+| Frontend not connecting     | Check VITE_API_URL matches backend URL   |
+| Port busy                   | sudo lsof -t -i:8000                     |
 
-Kill port if stuck:
+## Deployment
 
-```bash
-sudo lsof -t -i tcp:8000 | xargs kill -9
-```
+### Backend (Render)
 
----
+- Language: Python 3
+- Root Directory: backend
+- Build Command:
 
-##  Demo Script (1 Minute)
+  ```
+  pip install -r requirements.txt
+  ```
 
-> “This tool auto‑creates PPT slides using a local model (Phi‑3) for privacy and Pollinations for free AI images. User inputs a topic → model generates outline → images added → downloadable PPT. Fully local + open source.”
+- Start Command:
 
----
+  ```
+  bash start.sh
+  ```
 
-##  Completed Task Summary
+- Environment Variables (in Render dashboard):
+  ```
+  GEMINI_API_KEY = your_api_key
+  GEMINI_MODEL = gemini-2.5-flash-lite
+  ```
 
-- Set up Ollama & tested multiple models
-- Implemented slide generator
-- Added Pollinations AI image support
-- Blue/Pink themes + modern UI
-- Live preview + history tracking
+### Frontend (Vercel)
 
----
+- Framework: Vite + React
 
-## Credits & License
+- Environment Variable:
+  ```
+  VITE_API_URL = https://your-backend-name.onrender.com
+  ```
 
-- Local LLM: Phi‑3 Mini
-- UI: React + Tailwind
-- Backend: FastAPI
-- Images: Pollinations API
+## Demo Script
 
----
+“This web app automatically creates PowerPoint presentations using Google Gemini AI. Users enter a topic, and Gemini generates structured slide outlines, which are then converted into .pptx files using python-pptx. The app is deployed with a FastAPI backend (Render) and React frontend (Vercel).”
 
-### End of Guide 
-# chat-ppt
+## Completed Work Summary
+
+- Integrated Google Gemini 2.5 Flash-Lite API
+- Implemented FastAPI endpoints for text → PPT
+- Added .env config for secure API key management
+- Built modern React + Tailwind UI
+- Added history tracking, metrics & PPT export
+- Fully deployed (Render + Vercel)
+
+## License
+
+This project is open-source for learning and demonstration purposes.
+
+

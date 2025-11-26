@@ -1,0 +1,91 @@
+{
+  "Color": {
+    "type": "color",
+    "items": [
+      {
+        "name": "Crystal Red",
+        "hex": "#d62828",
+        "modelFile": "red_cresta.glb"
+      },
+      {
+        "name": "Glacier Blue",
+        "hex": "#1e88e5",
+        "modelFile": "blue_cresta.glb"
+      },
+      { "name": "Grey", "hex": "#8e8e8e", "modelFile": "grey_cresta.glb" },
+      { "name": "Black", "hex": "#111111", "modelFile": "black_cresta.glb" }
+    ]
+  },
+  "Design": {
+    "type": "feature",
+    "items": [
+      {
+        "id": "headlamp",
+        "label": "Headlamp",
+        "title": "LED Headlamp",
+        "desc": "Sleek LED headlamp. Svelte and stylish crystal clear LED lamps with bright visibility at all times."
+      },
+      {
+        "id": "mirror",
+        "label": "Mirrors",
+        "title": "Functional Mirrors",
+        "desc": "Clean, functional design with wide angles to ensure safety and visibility."
+      },
+      {
+        "id": "pillion",
+        "label": "Grab Handles",
+        "title": "Pillion Handles",
+        "desc": "Ergonomically designed handles ensuring safety and comfort for your riding companion."
+      },
+      {
+        "id": "display",
+        "label": "7' TFT",
+        "title": "Digital Display",
+        "desc": "Clear, minimal, and functional 7-inch TFT screen displaying all vital ride stats."
+      }
+    ]
+  },
+  "Performance": {
+    "type": "feature",
+    "items": [
+      {
+        "id": "motor",
+        "label": "Motor",
+        "title": "BLDC Hub Motor",
+        "desc": "Energy-efficient 800W BLDC hub motor providing smooth acceleration for city commutes."
+      },
+      {
+        "id": "battery",
+        "label": "Battery",
+        "title": "Power Pack",
+        "desc": "Robust 48V/60V battery pack optimized for consistent power delivery and longevity."
+      },
+      {
+        "id": "range",
+        "label": "Range",
+        "title": "Ride Range",
+        "desc": "Impressive range of 55–60 km per charge, perfect for daily urban travel."
+      }
+    ]
+  },
+  "SmartXonnect": {
+    "type": "feature",
+    "items": [
+      {
+        "id": "bt_indicator",
+        "label": "Battery Info",
+        "title": "Battery Indicator",
+        "desc": "Real-time battery health and charge status directly on your dashboard."
+      },
+      {
+        "id": "bluetooth",
+        "label": "Bluetooth",
+        "title": "Smart Connectivity",
+        "desc": "Stay connected, stay smart. Pair your phone for calls, music, and navigation."
+      }
+    ]
+  },
+  "Safety": { "type": "feature", "items": [] },
+  "Comfort": { "type": "feature", "items": [] },
+  "Charging": { "type": "feature", "items": [] }
+}

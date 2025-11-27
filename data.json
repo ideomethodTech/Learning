@@ -23,25 +23,29 @@
         "id": "headlamp",
         "label": "Headlamp",
         "title": "LED Headlamp",
-        "desc": "Sleek LED headlamp. Svelte and stylish crystal clear LED lamps with bright visibility at all times."
+        "desc": "Sleek LED headlamp...",
+        "meshName": "FntLit_glassShape"
       },
       {
         "id": "mirror",
         "label": "Mirrors",
         "title": "Functional Mirrors",
-        "desc": "Clean, functional design with wide angles to ensure safety and visibility."
+        "desc": "Clean, functional design...",
+        "meshName": "Mirror_glassShape"
       },
       {
         "id": "pillion",
         "label": "Grab Handles",
         "title": "Pillion Handles",
-        "desc": "Ergonomically designed handles ensuring safety and comfort for your riding companion."
+        "desc": "Ergonomically designed handles ensuring safety and comfort for your riding companion.",
+        "meshName": "SeatHandle_grp"
       },
       {
         "id": "display",
         "label": "7' TFT",
         "title": "Digital Display",
-        "desc": "Clear, minimal, and functional 7-inch TFT screen displaying all vital ride stats."
+        "desc": "Clear, minimal...",
+        "meshName": "screenShape"
       }
     ]
   },

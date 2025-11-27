@@ -183,6 +183,7 @@ function closeInfo() {
 // STEP 7: Reset Camera
 function resetCameraToDefault() {
   if (!cachedBikeCenter || !defaultCameraOrbit) return;
+  viewer.fieldOfView = "auto";
 
   // ✅ TURN OFF LIGHT EFFECT
   const modelViewerSymbols = Object.getOwnPropertySymbols(viewer);
@@ -224,6 +225,7 @@ async function focusOnMesh(meshName) {
 
     // RESET TO ORIGINAL POSITION FIRST
     viewer.cameraTarget = `${originalBikeCenter.x}m ${originalBikeCenter.y}m ${originalBikeCenter.z}m`;
+    viewer.fieldOfView = "auto";
 
     // Wait for reset to complete
     await new Promise((resolve) => setTimeout(resolve, 100)).catch((e) =>
@@ -282,11 +284,17 @@ async function focusOnMesh(meshName) {
     let cameraOrbit;
 
     if (meshName.includes("screen") || meshName.includes("display")) {
-      cameraOrbit = "-258deg 68deg 0.28m";
+      cameraOrbit = "-268deg 68deg 0.28m";
+      viewer.fieldOfView = "10deg";
       console.log("🎥 Using perfect screen camera angle");
     } else if (meshName.includes("mirror") || meshName.includes("Mirror")) {
       cameraOrbit = "-245.4deg 60.4deg 0.415m";
+      viewer.fieldOfView = "10deg";
       console.log("🎥 Using perfect mirror camera angle");
+    } else if (meshName.includes("handle") || meshName.includes("handlebar")) {
+      cameraOrbit = "-110.95deg 57.46deg 0.29m";
+        viewer.fieldOfView = "15deg";
+      console.log("🎥 Using perfect handlebar camera angle");
     } else {
       cameraOrbit = "-90deg 75deg 0.3m";
     }

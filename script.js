@@ -46,6 +46,8 @@ window.addEventListener("load", async () => {
   viewer.addEventListener("load", calculateBikeCenter);
 });
 
+let originalBikeCenter = null;
+
 // STEP 4: Calculate Bike Center on Load
 async function calculateBikeCenter() {
   await viewer.updateComplete;
@@ -60,21 +62,21 @@ async function calculateBikeCenter() {
 
     const scene = viewer[sceneSymbol];
     const bikeBox = new THREE.Box3().setFromObject(scene);
-    cachedBikeCenter = new THREE.Vector3();
-    bikeBox.getCenter(cachedBikeCenter);
 
-    // ✅ ADD THIS LOGGING:
+    // STORE ORIGINAL CENTER ONLY ONCE
+    if (!originalBikeCenter) {
+      originalBikeCenter = new THREE.Vector3();
+      bikeBox.getCenter(originalBikeCenter);
+      cachedBikeCenter = originalBikeCenter.clone(); // Keep a copy
+    }
+
     console.log("=== INITIAL BIKE CALCULATION ===");
-    console.log("📦 Calculated Bike Center:", cachedBikeCenter);
-    console.log("📷 Current Camera Target:", viewer.cameraTarget);
-    console.log("📷 Current Camera Orbit:", viewer.getCameraOrbit());
+    console.log("📦 Original Bike Center:", originalBikeCenter);
 
-    // Set camera to look at bike center
-    viewer.cameraTarget = `${cachedBikeCenter.x}m ${cachedBikeCenter.y}m ${cachedBikeCenter.z}m`;
+    // ALWAYS use the original center, never recalculate
+    viewer.cameraTarget = `${originalBikeCenter.x}m ${originalBikeCenter.y}m ${originalBikeCenter.z}m`;
 
-    console.log("🎯 Setting Camera Target to:", viewer.cameraTarget);
-
-    // Store the default orbit
+    // Store default orbit
     const orbit = viewer.getCameraOrbit();
     defaultCameraOrbit = {
       theta: (orbit.theta * 180) / Math.PI,
@@ -217,7 +219,19 @@ function resetCameraToDefault() {
 }
 
 async function focusOnMesh(meshName) {
-  await viewer.updateComplete;
+  try {
+    await viewer.updateComplete;
+
+    // RESET TO ORIGINAL POSITION FIRST
+    viewer.cameraTarget = `${originalBikeCenter.x}m ${originalBikeCenter.y}m ${originalBikeCenter.z}m`;
+
+    // Wait for reset to complete
+    await new Promise((resolve) => setTimeout(resolve, 100)).catch((e) =>
+      console.error("Reset timeout error:", e)
+    );
+  } catch (error) {
+    console.error("❌ Error in focusOnMesh:", error);
+  }
 
   try {
     const modelViewerSymbols = Object.getOwnPropertySymbols(viewer);

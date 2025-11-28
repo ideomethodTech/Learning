@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Scooter Model - 360° Viewer</title>
+  <meta name="description" content="Interactive 360° scooter model viewer built with Three.js">
+</head>
+
+<body>
+  <div id="app">
+    <canvas id="canvas"></canvas>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="loader"></div>
+      <p>Loading 3D Model...</p>
+    </div>
+
+    <!-- Controls Info -->
+    <div id="controls-info">
+      <h2>🎮 Controls</h2>
+      <ul>
+        <li><strong>Left Mouse:</strong> Rotate</li>
+        <li><strong>Right Mouse:</strong> Pan</li>
+        <li><strong>Scroll:</strong> Zoom</li>
+      </ul>
+    </div>
+
+    <!-- Model Info -->
+    <div id="model-info">
+      <h1>Electric Scooter</h1>
+      <p>360° Interactive Viewer</p>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

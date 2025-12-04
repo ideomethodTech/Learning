@@ -24,28 +24,36 @@
         "label": "Headlamp",
         "title": "LED Headlamp",
         "desc": "Sleek LED headlamp...",
-        "meshName": "FntLit_glassShape"
+        "meshName": "FntLit_glassShape",
+        "cameraOrbit": "-90deg 70deg 0.3m",
+        "fieldOfView": "auto"
       },
       {
         "id": "mirror",
         "label": "Mirrors",
         "title": "Functional Mirrors",
         "desc": "Clean, functional design...",
-        "meshName": "Mirror_glassShape"
+        "meshName": "Mirror_glassShape",
+        "cameraOrbit": "-245.4deg 50deg 0.415m",
+        "fieldOfView": "21deg"
       },
       {
         "id": "pillion",
         "label": "Grab Handles",
         "title": "Pillion Handles",
         "desc": "Ergonomically designed handles ensuring safety and comfort for your riding companion.",
-       "meshName": "seathandleShape"
+        "meshName": "seathandleShape",
+        "cameraOrbit": "-110.95deg 57.46deg 0.29m",
+        "fieldOfView": "18deg"
       },
       {
         "id": "display",
         "label": "7' TFT",
         "title": "Digital Display",
         "desc": "Clear, minimal...",
-        "meshName": "screenShape"
+        "meshName": "screenShape",
+        "cameraOrbit": "-267deg 59deg 0.278m",
+        "fieldOfView": "10deg"
       }
     ]
   },

@@ -1,8 +1,10 @@
+
+
 export function handleMenu(
   category,
   element,
   vehicleData,
-  activeMeshName,
+  activeItemId, 
   viewer,
   cachedBikeCenter,
   defaultCameraOrbit,
@@ -48,25 +50,27 @@ export function handleMenu(
         const div = document.createElement("div");
         div.className = "sub-item";
 
-        if (item.meshName && item.meshName === activeMeshName) {
+        // Changed: Check by item.id instead of meshName
+        if (item.id === activeItemId) {
           div.classList.add("active");
         }
 
         const iconClass = ICON_MAP[item.id] || ICON_MAP["default"];
 
         div.onclick = () => {
-          console.log(`🖱️ Clicked: "${item.label}"`);
+          console.log(`🖱️ Clicked: "${item.label}" (ID: ${item.id})`);
 
-          if (item.meshName && activeMeshName === item.meshName) {
+          // Changed: Compare by item.id
+          if (item.id === activeItemId) {
             console.log(`⏪ Toggling OFF - Resetting camera`);
             resetCameraToDefault(viewer, cachedBikeCenter, defaultCameraOrbit);
-            activeMeshName = null;
+            activeItemId = null;
             closeInfo();
             handleMenu(
               category,
               element,
               vehicleData,
-              activeMeshName,
+              activeItemId, 
               viewer,
               cachedBikeCenter,
               defaultCameraOrbit,
@@ -83,7 +87,7 @@ export function handleMenu(
             showDetail(item.title, item.desc);
             if (item.meshName) {
               focusOnMesh(item, viewer, originalBikeCenter, THREE, cachedBikeCenter);
-              activeMeshName = item.meshName;
+              activeItemId = item.id; // Store the item ID, not meshName
             }
           }
         };
@@ -97,5 +101,5 @@ export function handleMenu(
   }
   subMenuBar.classList.add("visible");
 
-  return activeMeshName;
+  return activeItemId; // Return the item ID
 }

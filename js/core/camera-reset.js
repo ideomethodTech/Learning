@@ -1,3 +1,5 @@
+import { resetLastFocusedItem } from "./focus-mesh.js";
+
 // reset camera  when Toggling OFF 
 export function resetCameraToDefault(
   viewer,
@@ -39,4 +41,6 @@ export function resetCameraToDefault(
     }, 200);
   }
   viewer.addEventListener("camera-change", onCameraChange);
+
+    resetLastFocusedItem();
 }

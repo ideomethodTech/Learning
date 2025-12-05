@@ -81,7 +81,10 @@
         "id": "range",
         "label": "Range",
         "title": "Range",
-        "desc": "55–60 km per charge for daily commuting needs."
+        "desc": "55–60 km per charge for daily commuting needs.",
+        "meshName": "screenShape",
+        "cameraOrbit": "-267deg 59deg 0.278m",
+        "fieldOfView": "12deg"
       }
     ]
   },
@@ -92,13 +95,19 @@
         "id": "bt_indicator",
         "label": "Battery Indicator",
         "title": "Battery Indicator",
-        "desc": "Know your charge anytime with real-time battery monitoring."
+        "desc": "Know your charge anytime with real-time battery monitoring.",
+        "meshName": "screenShape",
+        "cameraOrbit": "-267deg 59deg 0.278m",
+        "fieldOfView": "10deg"
       },
       {
         "id": "bluetooth",
         "label": "Bluetooth",
         "title": "Bluetooth",
-        "desc": "Stay connected, stay smart with seamless device pairing."
+        "desc": "Stay connected, stay smart with seamless device pairing.",
+        "meshName": "screenShape",
+        "cameraOrbit": "-267deg 59deg 0.278m",
+        "fieldOfView": "12deg"
       },
       {
         "id": "usb_charging",
@@ -106,8 +115,8 @@
         "title": "USB Charging",
         "desc": "Power for your gadgets on the go.",
         "meshName": "usb_chargerShape",
-        "cameraOrbit": "-267deg 59deg 0.278m",
-        "fieldOfView": "15deg"
+        "cameraOrbit": "-286deg 54deg 0.278m",
+        "fieldOfView": "10deg"
       }
     ]
   },

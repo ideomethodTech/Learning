@@ -127,25 +127,37 @@
         "id": "disc_brake",
         "label": "Disc Brake",
         "title": "Disc Brake",
-        "desc": "Safer halts, every ride with responsive braking performance."
+        "desc": "Safer halts, every ride with responsive braking performance.",
+        "meshName": "diskShape",
+        "cameraOrbit": "339deg 94deg 0.35m",
+        "fieldOfView": "20deg"
       },
       {
         "id": "tubeless_tires",
         "label": "Tubeless Tires",
         "title": "Tubeless Tires",
-        "desc": "Long-lasting road performance with reduced puncture risk."
+        "desc": "Long-lasting road performance with reduced puncture risk.",
+        "meshName": "tyreShape",
+        "cameraOrbit": "406deg 81deg 0.35m",
+        "fieldOfView": "20deg"
       },
       {
         "id": "eabs",
         "label": "E-ABS",
         "title": "E-ABS",
-        "desc": "Safer braking system with electronic anti-lock technology."
+        "desc": "Safer braking system with electronic anti-lock technology.",
+        "meshName": "brakee_1Shape",
+        "cameraOrbit": "-180deg 60deg 0.35m",
+        "fieldOfView": "15deg"
       },
       {
         "id": "anti_theft",
         "label": "Anti-theft Alarm",
         "title": "Anti-theft Alarm",
-        "desc": "Secure your scooter with confidence against unauthorized access."
+        "desc": "Secure your scooter with confidence against unauthorized access.",
+        "meshName": "controllerShape",
+        "cameraOrbit": "-267deg 59deg 0.278m",
+        "fieldOfView": "12deg"
       },
       {
         "id": "side_stand",
@@ -153,8 +165,8 @@
         "title": "Side Stand Alert",
         "desc": "Safety begins with awareness - alerts when side stand is engaged.",
         "meshName": "sidestandShape",
-        "cameraOrbit": "-110.95deg 57.46deg 0.29m",
-        "fieldOfView": "18deg"
+        "cameraOrbit": "3deg 70deg 0.29m",
+         "fieldOfView": "20deg"
       }
     ]
   },

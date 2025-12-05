@@ -1,12 +1,6 @@
 let lastFocusedItem = null;
 
-export async function focusOnMesh(
-  item,
-  viewer,
-  originalBikeCenter,
-  THREE,
-  cachedBikeCenter
-) {
+export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cachedBikeCenter) {
   console.log("🎯 Focus called for:", item.label, "| meshName:", item.meshName);
   console.log("📌 Last focused item:", lastFocusedItem);
 
@@ -14,7 +8,7 @@ export async function focusOnMesh(
     await viewer.updateComplete;
 
     const isSameMesh = lastFocusedItem && lastFocusedItem.meshName === item.meshName;
-    
+
     console.log("🔍 Is same mesh?", isSameMesh);
 
     if (!isSameMesh) {
@@ -26,7 +20,7 @@ export async function focusOnMesh(
     } else {
       // Same mesh - NO reset, just update FOV if different
       console.log("⚡ Same mesh detected - minimal adjustment only");
-      
+
       // Only update FOV if it's actually different
       if (item.fieldOfView && item.fieldOfView !== lastFocusedItem.fieldOfView) {
         console.log(`🔍 Adjusting FOV: ${lastFocusedItem.fieldOfView} → ${item.fieldOfView}`);
@@ -34,21 +28,18 @@ export async function focusOnMesh(
       } else {
         console.log("✅ Already at correct position - no changes needed");
       }
-      
+
       // Update the last focused item and return early - no camera movement!
       lastFocusedItem = item;
       return;
     }
-
   } catch (error) {
     console.error("❌ Error in focusOnMesh:", error);
   }
 
   try {
     const modelViewerSymbols = Object.getOwnPropertySymbols(viewer);
-    const sceneSymbol = modelViewerSymbols.find(
-      (symbol) => symbol.description === "scene"
-    );
+    const sceneSymbol = modelViewerSymbols.find((symbol) => symbol.description === "scene");
 
     if (!sceneSymbol) return;
     const scene = viewer[sceneSymbol];
@@ -69,15 +60,27 @@ export async function focusOnMesh(
     targetMeshes[0].getWorldPosition(worldPosition);
     const center = worldPosition;
 
-    console.log(
-      `📦 ${item.meshName} center: (${center.x}, ${center.y}, ${center.z})`
-    );
+    console.log(`📦 ${item.meshName} center: (${center.x}, ${center.y}, ${center.z})`);
 
     let fixedCenter = new THREE.Vector3(0, center.y, cachedBikeCenter.z);
 
     if (item.meshName.includes("screen") || item.meshName.includes("display") || item.meshName.includes("usb")) {
       fixedCenter.y = center.y + 0.05;
-      console.log(fixedCenter.y, "fixedcentery+0.05");
+    }
+
+    if (item.meshName.includes("diskShape")) {
+      fixedCenter.y = center.y - 0.02;
+      fixedCenter.x = center.x - 0.05;
+    }
+
+    if (item.meshName.includes("tyreShape")) {
+      fixedCenter.y = center.y - 0.03;
+      fixedCenter.x = center.x + 0.02;
+    }
+
+    if (item.meshName.includes("sidestandShape")) {
+      fixedCenter.y = center.y - 0.03;
+      // fixedCenter.x = center.x + 0.02;
     }
 
     viewer.timeScale = 0.5;
@@ -115,4 +118,3 @@ export function resetLastFocusedItem() {
   lastFocusedItem = null;
   console.log("🔄 Reset last focused item");
 }
-

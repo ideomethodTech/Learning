@@ -1,5 +1,5 @@
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js";
-import { logAllMeshNames, setupScreenDragListener } from "./dev/debug-tools.js";
+import { logAllMeshNames, setupScreenDragListener, analyzeColorableMeshes } from "./dev/debug-tools.js";
 import { focusOnMesh } from "./core/focus-mesh.js";
 import { resetCameraToDefault } from "./core/camera-reset.js";
 import { calculateBikeCenter } from "./core/calculate-center.js";
@@ -33,6 +33,7 @@ const loader = document.getElementById("loader");
 
 window.logAllMeshNames = () => logAllMeshNames(viewer);
 window.setupScreenDragListener = () => setupScreenDragListener(viewer);
+window.analyzeColorableMeshes = () => analyzeColorableMeshes(viewer);
 window.addEventListener("load", async () => {
   try {
     const response = await fetch("./data.json");

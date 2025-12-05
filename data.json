@@ -1,19 +1,24 @@
 {
   "Color": {
     "type": "color",
+    "meshName": "BackPanel_metalShape",
     "items": [
       {
         "name": "Crystal Red",
-        "hex": "#d62828",
-        "modelFile": "red_cresta.glb"
+        "hex": "#d62828"
       },
       {
         "name": "Glacier Blue",
-        "hex": "#1e88e5",
-        "modelFile": "blue_cresta.glb"
+        "hex": "#1e88e5"
       },
-      { "name": "Grey", "hex": "#8e8e8e", "modelFile": "grey_cresta.glb" },
-      { "name": "Black", "hex": "#111111", "modelFile": "black_cresta.glb" }
+      {
+        "name": "Grey",
+        "hex": "#8e8e8e"
+      },
+      {
+        "name": "Black",
+        "hex": "#111111"
+      }
     ]
   },
   "Design": {

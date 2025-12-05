@@ -2,9 +2,7 @@ export async function logAllMeshNames(viewer) {
   await viewer.updateComplete;
 
   const modelViewerSymbols = Object.getOwnPropertySymbols(viewer);
-  const sceneSymbol = modelViewerSymbols.find(
-    (symbol) => symbol.description === "scene"
-  );
+  const sceneSymbol = modelViewerSymbols.find((symbol) => symbol.description === "scene");
 
   if (!sceneSymbol) return;
 
@@ -41,10 +39,52 @@ export function setupScreenDragListener(viewer) {
       console.log(`   Camera Target: ${target}`);
       console.log(`   Camera Orbit:`, orbit);
       console.log(
-        `   Copy this: viewer.cameraOrbit = "${
-          (orbit.theta * 180) / Math.PI
-        }deg ${(orbit.phi * 180) / Math.PI}deg ${orbit.radius}m"`
+        `   Copy this: viewer.cameraOrbit = "${(orbit.theta * 180) / Math.PI}deg ${(orbit.phi * 180) / Math.PI}deg ${
+          orbit.radius
+        }m"`
       );
     }, 500);
   });
+}
+
+export async function analyzeColorableMeshes(viewer) {
+  await viewer.updateComplete;
+
+  const modelViewerSymbols = Object.getOwnPropertySymbols(viewer);
+  const sceneSymbol = modelViewerSymbols.find((symbol) => symbol.description === "scene");
+
+  if (!sceneSymbol) return;
+
+  const scene = viewer[sceneSymbol];
+  const colorableMeshes = [];
+
+  scene.traverse((child) => {
+    if (child.isMesh && child.material) {
+      const mat = child.material;
+      const meshInfo = {
+        name: child.name,
+        materialType: mat.type,
+        hasColor: !!mat.color,
+        currentColor: mat.color ? "#" + mat.color.getHexString() : null,
+        isTransparent: mat.transparent,
+        vertexColors: child.geometry.hasAttribute("color") ? "YES" : "NO",
+      };
+
+      // Materials that CAN be recolored:
+      if (mat.color && !mat.transparent && mat.type.includes("Material")) {
+        colorableMeshes.push(meshInfo);
+      }
+    }
+  });
+
+  console.log("=== COLORABLE MESHES (can change dynamically) ===");
+  colorableMeshes.forEach((mesh, i) => {
+    console.log(`${i + 1}. ${mesh.name}`);
+    console.log(`   Material: ${mesh.materialType}`);
+    console.log(`   Current: ${mesh.currentColor}`);
+    console.log(`   Vertex Colors: ${mesh.vertexColors}`);
+    console.log("---");
+  });
+
+  return colorableMeshes;
 }

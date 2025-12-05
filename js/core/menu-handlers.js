@@ -25,17 +25,19 @@ export function handleMenu(
   subMenuBar.innerHTML = "";
 
   if (data.type === "color") {
+    const meshName = data.meshName || "BackPanel_metalShape";
+
     data.items.forEach((color) => {
       const div = document.createElement("div");
       div.className = "sub-item";
       div.onclick = () => {
         const changeColorModule = import("../core/color-handler.js");
-        changeColorModule.then((module) => module.changeColor(color.modelFile));
+        changeColorModule.then((module) => module.changeColor(color.hex, meshName, viewer));
       };
       div.innerHTML = `
-        <div class="color-dot" style="background: ${color.hex};"></div>
-        <span>${color.name}</span>
-      `;
+      <div class="color-dot" style="background: ${color.hex};"></div>
+      <span>${color.name}</span>
+    `;
       subMenuBar.appendChild(div);
     });
   } else {

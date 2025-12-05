@@ -4,20 +4,7 @@ import { focusOnMesh } from "./core/focus-mesh.js";
 import { resetCameraToDefault } from "./core/camera-reset.js";
 import { calculateBikeCenter } from "./core/calculate-center.js";
 import { handleMenu } from "./core/menu-handlers.js";
-
-// Icon Mapping
-const ICON_MAP = {
-  headlamp: "fa-lightbulb",
-  mirror: "fa-arrows-left-right",
-  pillion: "fa-hands",
-  display: "fa-tv",
-  motor: "fa-cogs",
-  battery: "fa-car-battery",
-  range: "fa-road",
-  bt_indicator: "fa-battery-half",
-  bluetooth: "fa-bluetooth-b",
-  default: "fa-circle-info",
-};
+import { ICON_MAP } from "/assets/icon-map.js";
 
 // Variables & Initialization
 let vehicleData = {};

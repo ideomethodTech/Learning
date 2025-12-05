@@ -97,3 +97,4 @@ export async function focusOnMesh(
     console.error("❌ Error focusing:", error);
   }
 }
+

@@ -197,10 +197,9 @@
         <div class="feature-item active" onclick="toggleColorBar()">Color</div>
         <div class="feature-item">Design</div>
         <div class="feature-item">Performance</div>
-        <div class="feature-item">SmartXonnect</div>
+        <div class="feature-item">Connectivity</div>
         <div class="feature-item">Safety</div>
         <div class="feature-item">Comfort</div>
-        <div class="feature-item">Charging</div>
     </div>
 
 </div>

@@ -68,41 +68,117 @@
       {
         "id": "motor",
         "label": "Motor",
-        "title": "BLDC Hub Motor",
-        "desc": "Energy-efficient 800W BLDC hub motor providing smooth acceleration for city commutes."
+        "title": "Motor",
+        "desc": "Energy-efficient 800W BLDC hub motor providing reliable city performance."
       },
       {
         "id": "battery",
         "label": "Battery",
-        "title": "Power Pack",
-        "desc": "Robust 48V/60V battery pack optimized for consistent power delivery and longevity."
+        "title": "Battery",
+        "desc": "48V/60V battery pack for city rides with optimized power delivery."
       },
       {
         "id": "range",
         "label": "Range",
-        "title": "Ride Range",
-        "desc": "Impressive range of 55–60 km per charge, perfect for daily urban travel."
+        "title": "Range",
+        "desc": "55–60 km per charge for daily commuting needs."
       }
     ]
   },
-  "SmartXonnect": {
+  "Connectivity": {
     "type": "feature",
     "items": [
       {
         "id": "bt_indicator",
-        "label": "Battery Info",
+        "label": "Battery Indicator",
         "title": "Battery Indicator",
-        "desc": "Real-time battery health and charge status directly on your dashboard."
+        "desc": "Know your charge anytime with real-time battery monitoring."
       },
       {
         "id": "bluetooth",
         "label": "Bluetooth",
-        "title": "Smart Connectivity",
-        "desc": "Stay connected, stay smart. Pair your phone for calls, music, and navigation."
+        "title": "Bluetooth",
+        "desc": "Stay connected, stay smart with seamless device pairing."
+      },
+      {
+        "id": "usb_charging",
+        "label": "USB Charging",
+        "title": "USB Charging",
+        "desc": "Power for your gadgets on the go.",
+        "meshName": "usb_chargerShape",
+        "cameraOrbit": "-267deg 59deg 0.278m",
+        "fieldOfView": "15deg"
       }
     ]
   },
-  "Safety": { "type": "feature", "items": [] },
-  "Comfort": { "type": "feature", "items": [] },
-  "Charging": { "type": "feature", "items": [] }
+  "Safety": {
+    "type": "feature",
+    "items": [
+      {
+        "id": "disc_brake",
+        "label": "Disc Brake",
+        "title": "Disc Brake",
+        "desc": "Safer halts, every ride with responsive braking performance."
+      },
+      {
+        "id": "tubeless_tires",
+        "label": "Tubeless Tires",
+        "title": "Tubeless Tires",
+        "desc": "Long-lasting road performance with reduced puncture risk."
+      },
+      {
+        "id": "eabs",
+        "label": "E-ABS",
+        "title": "E-ABS",
+        "desc": "Safer braking system with electronic anti-lock technology."
+      },
+      {
+        "id": "anti_theft",
+        "label": "Anti-theft Alarm",
+        "title": "Anti-theft Alarm",
+        "desc": "Secure your scooter with confidence against unauthorized access."
+      },
+      {
+        "id": "side_stand",
+        "label": "Side Stand Alert",
+        "title": "Side Stand Alert",
+        "desc": "Safety begins with awareness - alerts when side stand is engaged.",
+        "meshName": "sidestandShape",
+        "cameraOrbit": "-110.95deg 57.46deg 0.29m",
+        "fieldOfView": "18deg"
+      }
+    ]
+  },
+  "Comfort": {
+    "type": "feature",
+    "items": [
+      {
+        "id": "storage",
+        "label": "Storage",
+        "title": "Storage",
+        "desc": "Enough space for daily carry-ons and essentials."
+      },
+      {
+        "id": "ride_modes",
+        "label": "3 Ride Modes",
+        "title": "3 Ride Modes",
+        "desc": "Economy-focused performance with multiple riding options."
+      },
+      {
+        "id": "remote_keys",
+        "label": "Remote Keys",
+        "title": "Remote Keys",
+        "desc": "Security and convenience in your pocket with keyless operation."
+      },
+      {
+        "id": "suspension",
+        "label": "Suspension",
+        "title": "Suspension",
+        "desc": "Smooth riding on city streets with optimized shock absorption.",
+        "meshName": "shockup_geo1Shape",
+        "cameraOrbit": "-110.95deg 57.46deg 0.29m",
+        "fieldOfView": "18deg"
+      }
+    ]
+  }
 }

@@ -1,19 +1,13 @@
 import { resetLastFocusedItem } from "./focus-mesh.js";
 
-// reset camera  when Toggling OFF 
-export function resetCameraToDefault(
-  viewer,
-  cachedBikeCenter,
-  defaultCameraOrbit
-) {
+// reset camera  when Toggling OFF
+export async function resetCameraToDefault(viewer, cachedBikeCenter, defaultCameraOrbit) {
   if (!cachedBikeCenter || !defaultCameraOrbit) return;
   viewer.fieldOfView = "auto";
 
   // ✅ TURN OFF LIGHT EFFECT
   const modelViewerSymbols = Object.getOwnPropertySymbols(viewer);
-  const sceneSymbol = modelViewerSymbols.find(
-    (symbol) => symbol.description === "scene"
-  );
+  const sceneSymbol = modelViewerSymbols.find((symbol) => symbol.description === "scene");
 
   if (sceneSymbol) {
     const scene = viewer[sceneSymbol];
@@ -21,8 +15,7 @@ export function resetCameraToDefault(
       if (child.isMesh && child.originalMaterial) {
         // Restore original material properties
         child.material.emissive = child.originalMaterial.emissive;
-        child.material.emissiveIntensity =
-          child.originalMaterial.emissiveIntensity;
+        child.material.emissiveIntensity = child.originalMaterial.emissiveIntensity;
       }
     });
   }
@@ -42,5 +35,15 @@ export function resetCameraToDefault(
   }
   viewer.addEventListener("camera-change", onCameraChange);
 
-    resetLastFocusedItem();
+  resetLastFocusedItem();
+
+  // Close storage if it's open
+  try {
+    const storageModule = await import("./storage-animation.js");
+    if (storageModule.getStorageState()) {
+      await storageModule.closeStorage(viewer);
+    }
+  } catch (error) {
+    console.error("❌ Failed to close storage:", error);
+  }
 }

@@ -166,7 +166,7 @@
         "desc": "Safety begins with awareness - alerts when side stand is engaged.",
         "meshName": "sidestandShape",
         "cameraOrbit": "3deg 70deg 0.29m",
-         "fieldOfView": "20deg"
+        "fieldOfView": "20deg"
       }
     ]
   },
@@ -177,19 +177,28 @@
         "id": "storage",
         "label": "Storage",
         "title": "Storage",
-        "desc": "Enough space for daily carry-ons and essentials."
+        "desc": "Enough space for daily carry-ons and essentials.",
+        "meshName": "SeatShape",
+        "cameraOrbit": "34deg 62deg 0.29m",
+        "fieldOfView": "25deg"
       },
       {
         "id": "ride_modes",
         "label": "3 Ride Modes",
         "title": "3 Ride Modes",
-        "desc": "Economy-focused performance with multiple riding options."
+        "desc": "Economy-focused performance with multiple riding options.",
+        "meshName": "screenShape",
+        "cameraOrbit": "-267deg 59deg 0.278m",
+        "fieldOfView": "10deg"
       },
       {
         "id": "remote_keys",
         "label": "Remote Keys",
         "title": "Remote Keys",
-        "desc": "Security and convenience in your pocket with keyless operation."
+        "desc": "Security and convenience in your pocket with keyless operation.",
+        "meshName": "buttonShape",
+        "cameraOrbit": "-267deg 59deg 0.278m",
+        "fieldOfView": "12deg"
       },
       {
         "id": "suspension",
@@ -197,8 +206,8 @@
         "title": "Suspension",
         "desc": "Smooth riding on city streets with optimized shock absorption.",
         "meshName": "shockup_geo1Shape",
-        "cameraOrbit": "-110.95deg 57.46deg 0.29m",
-        "fieldOfView": "18deg"
+        "cameraOrbit": "406deg 81deg 0.35m",
+        "fieldOfView": "20deg"
       }
     ]
   }

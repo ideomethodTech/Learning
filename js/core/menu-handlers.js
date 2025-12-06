@@ -1,10 +1,8 @@
-
-
 export function handleMenu(
   category,
   element,
   vehicleData,
-  activeItemId, 
+  activeItemId,
   viewer,
   cachedBikeCenter,
   defaultCameraOrbit,
@@ -70,7 +68,7 @@ export function handleMenu(
               category,
               element,
               vehicleData,
-              activeItemId, 
+              activeItemId,
               viewer,
               cachedBikeCenter,
               defaultCameraOrbit,

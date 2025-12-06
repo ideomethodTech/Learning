@@ -1,3 +1,5 @@
+import { openStorage ,getStorageState ,closeStorage } from "./storage-animation.js";
+
 let lastFocusedItem = null;
 
 export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cachedBikeCenter) {
@@ -10,6 +12,21 @@ export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cache
     const isSameMesh = lastFocusedItem && lastFocusedItem.meshName === item.meshName;
 
     console.log("🔍 Is same mesh?", isSameMesh);
+
+    // ADD THIS: Open storage when focusing on storage compartment
+    if (item.id === "storage") {
+      console.log("📦 Opening storage compartment...");
+      try {
+        openStorage(viewer, THREE);
+      } catch (error) {
+        console.error("❌ Failed to open storage:", error);
+      }
+    }
+
+    // Close storage if open when switching to different mesh
+    if (getStorageState() && item.meshName !== "SeatShape") {
+      await closeStorage(viewer, THREE);
+    }
 
     if (!isSameMesh) {
       // Different mesh - do the full reset animation

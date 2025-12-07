@@ -198,15 +198,15 @@
         "desc": "Security and convenience in your pocket with keyless operation.",
         "meshName": "buttonShape",
         "cameraOrbit": "-267deg 59deg 0.278m",
-        "fieldOfView": "12deg"
+        "fieldOfView": "13deg"
       },
       {
         "id": "suspension",
         "label": "Suspension",
         "title": "Suspension",
         "desc": "Smooth riding on city streets with optimized shock absorption.",
-        "meshName": "shockup_geo1Shape",
-        "cameraOrbit": "406deg 81deg 0.35m",
+        "meshName": "springShape",
+        "cameraOrbit": "414deg 109deg 0.35m",
         "fieldOfView": "20deg"
       }
     ]

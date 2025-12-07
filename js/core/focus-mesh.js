@@ -33,7 +33,7 @@ export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cache
       console.log("🔄 Switching to different mesh, resetting camera...");
       viewer.cameraTarget = `${originalBikeCenter.x}m ${originalBikeCenter.y}m ${originalBikeCenter.z}m`;
       viewer.fieldOfView = "auto";
-      await new Promise((resolve) => setTimeout(resolve, 150));
+      await new Promise((resolve) => setTimeout(resolve, 200));
     } else {
       // Same mesh - NO reset, just update FOV if different
       console.log("⚡ Same mesh detected - minimal adjustment only");
@@ -97,7 +97,11 @@ export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cache
 
     if (item.meshName.includes("sidestandShape")) {
       fixedCenter.y = center.y - 0.03;
-      // fixedCenter.x = center.x + 0.02;
+    }
+
+    if (item.meshName.includes("buttonShape")) {
+      fixedCenter.y = center.y + 0.001;
+      fixedCenter.x = center.x - 0.06;
     }
 
     viewer.timeScale = 0.5;

@@ -147,17 +147,17 @@
         "title": "E-ABS",
         "desc": "Safer braking system with electronic anti-lock technology.",
         "meshName": "brakee_1Shape",
-        "cameraOrbit": "-180deg 60deg 0.35m",
-        "fieldOfView": "15deg"
+        "cameraOrbit": "-90deg 80deg 2m"
+       
       },
       {
         "id": "anti_theft",
         "label": "Anti-theft Alarm",
         "title": "Anti-theft Alarm",
         "desc": "Secure your scooter with confidence against unauthorized access.",
-        "meshName": "controllerShape",
-        "cameraOrbit": "-267deg 59deg 0.278m",
-        "fieldOfView": "12deg"
+        "meshName": "brakee_1Shape",
+        "cameraOrbit": "-90deg 80deg 2m"
+    
       },
       {
         "id": "side_stand",

@@ -16,12 +16,22 @@ export function handleMenu(
 ) {
   document.querySelectorAll(".feature-item").forEach((el) => el.classList.remove("active"));
   if (element) element.classList.add("active");
+  const subMenuBar = document.getElementById("subMenuBar");
+  const currentlyActive = document.querySelector(".feature-item.active");
+
+  if (element && element === currentlyActive && subMenuBar.classList.contains("visible")) {
+    element.classList.remove("active");
+    subMenuBar.classList.remove("visible");
+    closeInfo();
+    resetCameraToDefault(viewer, cachedBikeCenter, defaultCameraOrbit);
+    return null;
+  }
   closeInfo();
 
   const data = vehicleData[category];
   if (!data) return;
 
-  const subMenuBar = document.getElementById("subMenuBar");
+ 
   subMenuBar.innerHTML = "";
 
   if (data.type === "color") {

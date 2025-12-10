@@ -74,3 +74,4 @@ function showDetail(title, description) {
 function closeInfo() {
   infoOverlay.classList.remove("visible");
 }
+window.closeInfo = closeInfo;

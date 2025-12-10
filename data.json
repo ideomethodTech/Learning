@@ -4,8 +4,8 @@
     "meshName": "BackPanel_metalShape",
     "items": [
       {
-        "name": "Crystal Red",
-        "hex": "#d62828"
+        "name": "Cherry Red",
+        "hex": "#550000"
       },
       {
         "name": "Glacier Blue",
@@ -13,7 +13,7 @@
       },
       {
         "name": "Grey",
-        "hex": "#8e8e8e"
+        "hex": "#898989"
       },
       {
         "name": "Black",

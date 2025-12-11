@@ -2,7 +2,7 @@ export const ICON_MAP = {
   // Design
   headlamp: "fa-lightbulb",
   mirror: "fa-arrows-left-right",
-  wheels: "fa-circle-notch" ,
+  wheels: "fa-circle-notch",
   pillion: "fa-hands",
   display: "fa-tv",
 
@@ -15,6 +15,8 @@ export const ICON_MAP = {
   bt_indicator: "fa-battery-half",
   bluetooth: "fa-bluetooth-b",
   usb_charging: "fa-plug",
+  call_alerts: "fa-phone",
+  music_control: "fa-music",
 
   // Safety
   disc_brake: "fa-stop-circle",

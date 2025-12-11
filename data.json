@@ -76,7 +76,7 @@
         "label": "Grab Handles",
         "title": "Pillion Handles",
         "desc": "Ergonomically designed handles ensuring safety and comfort for your riding companion.",
-        "meshName": ["seathandleShape" , "Line006002"],
+        "meshName": ["seathandleShape", "Line006002"],
         "cameraOrbit": "-243deg 90deg 0.29m",
         "fieldOfView": "20deg"
       },
@@ -98,13 +98,15 @@
         "id": "motor",
         "label": "Motor",
         "title": "Motor",
-        "desc": "Energy-efficient 800W BLDC hub motor providing reliable city performance."
+        "desc": "Energy-efficient 800W BLDC hub motor providing reliable city performance.",
+        "meshName": "polySurface494003"
       },
       {
         "id": "battery",
         "label": "Battery",
         "title": "Battery",
-        "desc": "48V/60V battery pack for city rides with optimized power delivery."
+        "desc": "48V/60V battery pack for city rides with optimized power delivery.",
+        "descElectrn": "72V advanced lead-acid power pack."
       },
       {
         "id": "range",
@@ -139,6 +141,15 @@
         "fieldOfView": "12deg"
       },
       {
+        "id": "call_alerts",
+        "label": "Call Alerts",
+        "title": "Call Alerts",
+        "desc": "Never miss a call with smart notifications on your dashboard.",
+        "meshName": "screenShape",
+        "cameraOrbit": "-267deg 59deg 0.278m",
+        "fieldOfView": "12deg"
+      },
+      {
         "id": "usb_charging",
         "label": "USB Charging",
         "title": "USB Charging",
@@ -146,6 +157,15 @@
         "meshName": "usb_chargerShape",
         "cameraOrbit": "-286deg 54deg 0.278m",
         "fieldOfView": "10deg"
+      },
+      {
+        "id": "music_control",
+        "label": "Music Control",
+        "title": "Music Control",
+        "desc": "Control your playlist without touching your phone.",
+        "meshName": "screenShape",
+        "cameraOrbit": "-267deg 59deg 0.278m",
+        "fieldOfView": "12deg"
       }
     ]
   },
@@ -157,7 +177,7 @@
         "label": "Disc Brake",
         "title": "Disc Brake",
         "desc": "Safer halts, every ride with responsive braking performance.",
-        "meshName": "diskShape",
+        "meshName": ["diskShape" , "polySurface2967003"],
         "cameraOrbit": "339deg 94deg 0.35m",
         "fieldOfView": "20deg"
       },
@@ -166,7 +186,7 @@
         "label": "Tubeless Tires",
         "title": "Tubeless Tires",
         "desc": "Long-lasting road performance with reduced puncture risk.",
-        "meshName": "tyreShape",
+        "meshName": ["tyreShape" , "tyreShape001"],
         "cameraOrbit": "406deg 81deg 0.35m",
         "fieldOfView": "20deg"
       },
@@ -223,16 +243,16 @@
         "label": "Remote Keys",
         "title": "Remote Keys",
         "desc": "Security and convenience in your pocket with keyless operation.",
-        "meshName": "buttonShape",
+        "meshName": "screenShape",
         "cameraOrbit": "-267deg 59deg 0.278m",
-        "fieldOfView": "13deg"
+        "fieldOfView": "10deg"
       },
       {
         "id": "suspension",
         "label": "Suspension",
         "title": "Suspension",
         "desc": "Smooth riding on city streets with optimized shock absorption.",
-        "meshName": "springShape",
+        "meshName": ["springShape" , "shockup_geo1Shape004"],
         "cameraOrbit": "414deg 109deg 0.35m",
         "fieldOfView": "20deg"
       }

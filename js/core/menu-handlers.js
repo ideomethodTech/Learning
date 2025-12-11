@@ -95,7 +95,10 @@ export function handleMenu(
             );
           } else {
             console.log(`⏩ Toggling ON - Focusing mesh`);
-            showDetail(item.title, item.desc);
+            const modelSrc = viewer.src;
+            const description =
+              item.id === "battery" && modelSrc.includes("electrn.glb") ? item.descElectrn : item.desc;
+            showDetail(item.title, description);
             if (item.meshName) {
               focusOnMesh(item, viewer, originalBikeCenter, THREE, cachedBikeCenter, bikeData.modelOrientation);
               activeItemId = item.id; // Store the item ID, not meshName

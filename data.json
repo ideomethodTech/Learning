@@ -76,9 +76,9 @@
         "label": "Grab Handles",
         "title": "Pillion Handles",
         "desc": "Ergonomically designed handles ensuring safety and comfort for your riding companion.",
-        "meshName": "seathandleShape",
-        "cameraOrbit": "-231deg 59deg 0.29m",
-        "fieldOfView": "10deg"
+        "meshName": ["seathandleShape" , "Line006002"],
+        "cameraOrbit": "-243deg 90deg 0.29m",
+        "fieldOfView": "20deg"
       },
       {
         "id": "display",

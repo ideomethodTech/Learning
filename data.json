@@ -5,19 +5,19 @@
     "items": [
       {
         "name": "Cherry Red",
-        "hex": "#550000"
+        "hex": "#D20A2E"
       },
       {
-        "name": "Glacier Blue",
-        "hex": "#1e88e5"
-      },
-      {
-        "name": "Grey",
-        "hex": "#898989"
+        "name": "White",
+        "hex": "#FFFFFF"
       },
       {
         "name": "Black",
-        "hex": "#111111"
+        "hex": "#000000"
+      },
+      {
+        "name": "Metallic Grey",
+        "hex": "#898989"
       }
     ]
   },
@@ -38,7 +38,7 @@
         "label": "Mirrors",
         "title": "Functional Mirrors",
         "desc": "Clean, functional design...",
-        "meshName": "Mirror_glassShape",
+        "meshName": ["Mirror_glassShape", "Mirror_plastic3002", "Mirror_plastic4002"],
         "cameraOrbit": "-245.4deg 50deg 0.415m",
         "fieldOfView": "21deg"
       },
@@ -148,7 +148,6 @@
         "desc": "Safer braking system with electronic anti-lock technology.",
         "meshName": "brakee_1Shape",
         "cameraOrbit": "-90deg 80deg 2m"
-       
       },
       {
         "id": "anti_theft",
@@ -157,7 +156,6 @@
         "desc": "Secure your scooter with confidence against unauthorized access.",
         "meshName": "brakee_1Shape",
         "cameraOrbit": "-90deg 80deg 2m"
-    
       },
       {
         "id": "side_stand",

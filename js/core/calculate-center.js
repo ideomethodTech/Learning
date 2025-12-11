@@ -49,26 +49,38 @@ export async function calculateBikeCenter(THREE, viewer) {
     // Set camera target to origin
     viewer.cameraTarget = "0m 0m 0m";
 
-    // Set camera orbit with calculated distance
-    viewer.cameraOrbit = `-90deg 80deg ${cameraDistance}m`;
+    // Detect model orientation
+    const isRotatedModel = size.z > size.x && size.z > size.y; // Z is longest = rotated 90deg
+
+    let cameraTheta = -90; // Default side view
+
+    if (isRotatedModel) {
+      console.log("🔄 Detected rotated model - adjusting camera angle");
+      cameraTheta = -0; // Front view instead of side view
+    }
+
+    // Use the adjusted angle
+    viewer.cameraOrbit = `${cameraTheta}deg 80deg ${cameraDistance}m`;
 
     // Wait for camera to settle
     await new Promise((resolve) => setTimeout(resolve, 100));
 
     const defaultCameraOrbit = {
-      theta: -90,
+      theta: cameraTheta,
       phi: 80,
       radius: cameraDistance,
     };
 
     console.log("💾 Default Camera Orbit:", defaultCameraOrbit);
     console.log("=== END INITIAL CALCULATION ===");
+    const modelOrientation = cameraTheta === 0 ? "Z-axis" : "X-axis";
 
     return {
       originalBikeCenter: new THREE.Vector3(0, 0, 0),
       cachedBikeCenter: new THREE.Vector3(0, 0, 0),
       defaultCameraOrbit,
       modelSize: size,
+      modelOrientation: modelOrientation,
     };
   } catch (error) {
     console.error("Error calculating bike center:", error);

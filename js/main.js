@@ -12,6 +12,7 @@ let activeMeshName = null;
 let originalBikeCenter = null;
 let cachedBikeCenter = null;
 let defaultCameraOrbit = null;
+let bikeData = null;
 const viewer = document.getElementById("ecoModel");
 const infoOverlay = document.getElementById("infoOverlay");
 const infoTitle = document.getElementById("infoTitle");
@@ -37,7 +38,7 @@ window.addEventListener("load", async () => {
   }, 2500);
 
   viewer.addEventListener("load", async () => {
-    const bikeData = await calculateBikeCenter(THREE, viewer);
+    bikeData = await calculateBikeCenter(THREE, viewer);
     if (bikeData) {
       originalBikeCenter = bikeData.originalBikeCenter;
       cachedBikeCenter = bikeData.cachedBikeCenter;
@@ -61,7 +62,8 @@ window.handleMenu = (category, element) => {
     resetCameraToDefault,
     focusOnMesh,
     showDetail,
-    closeInfo
+    closeInfo,
+    bikeData
   );
 };
 

@@ -12,7 +12,8 @@ export function handleMenu(
   resetCameraToDefault,
   focusOnMesh,
   showDetail,
-  closeInfo
+  closeInfo,
+  bikeData
 ) {
   const subMenuBar = document.getElementById("subMenuBar");
   const currentlyActive = document.querySelector(".feature-item.active ");
@@ -96,7 +97,7 @@ export function handleMenu(
             console.log(`⏩ Toggling ON - Focusing mesh`);
             showDetail(item.title, item.desc);
             if (item.meshName) {
-              focusOnMesh(item, viewer, originalBikeCenter, THREE, cachedBikeCenter);
+              focusOnMesh(item, viewer, originalBikeCenter, THREE, cachedBikeCenter, bikeData.modelOrientation);
               activeItemId = item.id; // Store the item ID, not meshName
             }
           }

@@ -34,7 +34,7 @@ export async function openStorage(viewer, THREE) {
 
   let storageMesh = null;
   scene.traverse((child) => {
-    if (child.isMesh && child.name === "SeatShape") {
+    if (child.isMesh && child.name === "SeatShape" || child.name === "polySurface3051002") {
       storageMesh = child;
     }
   });
@@ -116,7 +116,7 @@ export async function closeStorage(viewer) {
 
   let storageMesh = null;
   scene.traverse((child) => {
-    if (child.isMesh && child.name === "SeatShape") {
+    if (child.isMesh && child.name === "SeatShape" || child.name === "polySurface3051002") {
       storageMesh = child;
     }
   });

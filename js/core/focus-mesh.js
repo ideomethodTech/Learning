@@ -17,7 +17,7 @@ export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cache
     if (item.id === "storage") {
       console.log("📦 Opening storage compartment...");
       try {
-        openStorage(viewer, THREE);
+        openStorage(viewer, THREE , modelOrientation);
       } catch (error) {
         console.error("❌ Failed to open storage:", error);
       }
@@ -25,7 +25,7 @@ export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cache
 
     // Close storage if open when switching to different mesh
     if (getStorageState() && item.meshName !== "SeatShape") {
-      await closeStorage(viewer, THREE);
+      await closeStorage(viewer, THREE , modelOrientation);
     }
 
     if (!isSameMesh) {
@@ -125,6 +125,15 @@ export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cache
     if (item.meshName.includes("buttonShape")) {
       fixedCenter.y = center.y + 0.001;
       fixedCenter.x = center.x - 0.06;
+    }
+
+    if (item.label.includes("Wheels")) {
+      fixedCenter.x = center.x - 0.01;
+    }
+
+    if (item.label.includes("Grab Handles")) {
+        fixedCenter.y = center.y + 0.02;
+      fixedCenter.x = center.x - 0.04;
     }
 
     viewer.timeScale = 0.5;

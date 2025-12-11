@@ -1,7 +1,27 @@
 {
   "Color": {
     "type": "color",
-    "meshName": "BackPanel_metalShape",
+    "meshName": [
+      "BackPanel_metalShape",
+      "Box008002",
+      "Box017003",
+      "Box043003",
+      "pCube6003",
+      "polySurface3475002",
+      "polySurface3477003",
+      "Object008002",
+      "Object004002",
+      "logo color the white space aroutn logo color ",
+      "Object005002",
+      "Object006002",
+      "polySurface406002",
+
+      "Line006002",
+      "Line006005",
+
+      "polySurface553008",
+      "polySurface553011"
+    ],
     "items": [
       {
         "name": "Cherry Red",
@@ -43,13 +63,22 @@
         "fieldOfView": "21deg"
       },
       {
+        "id": "wheels",
+        "label": "Wheels",
+        "title": "Alloy Wheels",
+        "desc": "Stylish alloy wheels designed for durability and smooth ride.",
+        "meshName": ["tyreShape001", "tyreShape"],
+        "cameraOrbit": "-31deg 87deg 0.35m",
+        "fieldOfView": "20deg"
+      },
+      {
         "id": "pillion",
         "label": "Grab Handles",
         "title": "Pillion Handles",
         "desc": "Ergonomically designed handles ensuring safety and comfort for your riding companion.",
         "meshName": "seathandleShape",
-        "cameraOrbit": "-110.95deg 57.46deg 0.29m",
-        "fieldOfView": "18deg"
+        "cameraOrbit": "-231deg 59deg 0.29m",
+        "fieldOfView": "10deg"
       },
       {
         "id": "display",
@@ -176,7 +205,7 @@
         "label": "Storage",
         "title": "Storage",
         "desc": "Enough space for daily carry-ons and essentials.",
-        "meshName": "SeatShape",
+        "meshName": ["SeatShape", "polySurface3051002"],
         "cameraOrbit": "34deg 62deg 0.29m",
         "fieldOfView": "25deg"
       },

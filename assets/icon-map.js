@@ -2,6 +2,7 @@ export const ICON_MAP = {
   // Design
   headlamp: "fa-lightbulb",
   mirror: "fa-arrows-left-right",
+  wheels: "fa-circle-notch" ,
   pillion: "fa-hands",
   display: "fa-tv",
 

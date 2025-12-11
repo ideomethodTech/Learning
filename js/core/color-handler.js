@@ -19,23 +19,29 @@ export async function changeColor(hexColor, meshName, viewer) {
   const threeColor = hexColor.startsWith("#") ? hexColor.substring(1) : hexColor;
   const colorNumber = parseInt(threeColor, 16);
 
+  // Check if meshName is array or single string
+  const meshNames = Array.isArray(meshName) ? meshName : [meshName];
+
   // Find and change the specified mesh color
   let meshFound = false;
 
   scene.traverse((child) => {
-    if (child.isMesh && child.name === meshName && child.material) {
-      meshFound = true;
-      console.log(`Changing ${child.name} color...`);
-      console.log(`Old color: #${child.material.color.getHexString()}`);
+    if (child.isMesh && child.material) {
+      // Check if child.name matches any in meshNames array
+      if (meshNames.includes(child.name)) {
+        meshFound = true;
+        console.log(`Changing ${child.name} color...`);
+        console.log(`Old color: #${child.material.color.getHexString()}`);
 
-      // Set new color
-      child.material.color.set(colorNumber);
+        // Set new color
+        child.material.color.set(colorNumber);
 
-      // Force updates
-      child.material.needsUpdate = true;
-      child.matrixWorldNeedsUpdate = true;
+        // Force updates
+        child.material.needsUpdate = true;
+        child.matrixWorldNeedsUpdate = true;
 
-      console.log(`New color: #${child.material.color.getHexString()}`);
+        console.log(`New color: #${child.material.color.getHexString()}`);
+      }
     }
   });
 

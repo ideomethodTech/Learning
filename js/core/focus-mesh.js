@@ -2,7 +2,7 @@ import { openStorage, getStorageState, closeStorage } from "./storage-animation.
 
 let lastFocusedItem = null;
 
-export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cachedBikeCenter, modelOrientation) {
+export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cachedBikeCenter, modelOrientation ,modelSrc) {
   console.log("🎯 Focus called for:", item.label, "| meshName:", item.meshName);
   console.log("📌 Last focused item:", lastFocusedItem);
 
@@ -14,7 +14,7 @@ export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cache
     console.log("🔍 Is same mesh?", isSameMesh);
 
     //  Open storage when focusing on storage compartment
-    if (item.id === "storage") {
+    if (item.id === "storage" && !modelSrc.includes("electrn.glb")) {
       console.log("📦 Opening storage compartment...");
       try {
         openStorage(viewer, THREE, modelOrientation);

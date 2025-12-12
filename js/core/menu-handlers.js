@@ -13,7 +13,8 @@ export function handleMenu(
   focusOnMesh,
   showDetail,
   closeInfo,
-  bikeData
+  bikeData,
+  modelSrc
 ) {
   const subMenuBar = document.getElementById("subMenuBar");
   const currentlyActive = document.querySelector(".feature-item.active ");
@@ -95,12 +96,20 @@ export function handleMenu(
             );
           } else {
             console.log(`⏩ Toggling ON - Focusing mesh`);
-            const modelSrc = viewer.src;
+
             const description =
               item.id === "battery" && modelSrc.includes("electrn.glb") ? item.descElectrn : item.desc;
             showDetail(item.title, description);
             if (item.meshName) {
-              focusOnMesh(item, viewer, originalBikeCenter, THREE, cachedBikeCenter, bikeData.modelOrientation);
+              focusOnMesh(
+                item,
+                viewer,
+                originalBikeCenter,
+                THREE,
+                cachedBikeCenter,
+                bikeData.modelOrientation,
+                modelSrc
+              );
               activeItemId = item.id; // Store the item ID, not meshName
             }
           }

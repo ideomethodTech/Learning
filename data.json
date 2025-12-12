@@ -49,7 +49,7 @@
         "label": "Headlamp",
         "title": "LED Headlamp",
         "desc": "Sleek LED headlamp...",
-        "meshName": "FntLit_glassShape",
+        "meshName": ["FntLit_glassShape" ,"FntLit_glassShape001"],
         "cameraOrbit": "-90deg 70deg 0.3m",
         "fieldOfView": "auto"
       },
@@ -99,14 +99,17 @@
         "label": "Motor",
         "title": "Motor",
         "desc": "Energy-efficient 800W BLDC hub motor providing reliable city performance.",
-        "meshName": "polySurface494003"
+        "meshName": "polySurface494003",
+       "cameraOrbit": "-90deg 80deg 2m"
       },
       {
         "id": "battery",
         "label": "Battery",
         "title": "Battery",
         "desc": "48V/60V battery pack for city rides with optimized power delivery.",
-        "descElectrn": "72V advanced lead-acid power pack."
+        "descElectrn": "72V advanced lead-acid power pack.",
+        "meshName": "Battery_geo1002",
+        "cameraOrbit": "-90deg 80deg 2m"
       },
       {
         "id": "range",

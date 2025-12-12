@@ -7,6 +7,7 @@ import { handleMenu } from "./core/menu-handlers.js";
 import { ICON_MAP } from "/assets/icon-map.js";
 
 // Variables & Initialization
+
 let vehicleData = {};
 let activeMeshName = null;
 let originalBikeCenter = null;
@@ -18,6 +19,7 @@ const infoOverlay = document.getElementById("infoOverlay");
 const infoTitle = document.getElementById("infoTitle");
 const infoDesc = document.getElementById("infoDesc");
 const loader = document.getElementById("loader");
+let modelSrc = viewer.src;
 
 window.logAllMeshNames = () => logAllMeshNames(viewer);
 window.setupScreenDragListener = () => setupScreenDragListener(viewer);
@@ -63,7 +65,8 @@ window.handleMenu = (category, element) => {
     focusOnMesh,
     showDetail,
     closeInfo,
-    bikeData
+    bikeData,
+    modelSrc
   );
 };
 

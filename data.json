@@ -11,7 +11,6 @@
       "polySurface3477003",
       "Object008002",
       "Object004002",
-      "logo color the white space aroutn logo color ",
       "Object005002",
       "Object006002",
       "polySurface406002",
@@ -20,7 +19,35 @@
       "Line006005",
 
       "polySurface553008",
-      "polySurface553011"
+      "polySurface553011",
+
+      "polySurface301Shape",
+      "polySurfaceShape298",
+      "polySurface55Shape",
+      "polySurface287Shape",
+      "polySurface55Shape",
+
+      "polySurface3010RedScooter_001Shape",
+      "VervpolySurface3010RedScooter_001Shape",
+      "polySurface590002",
+      "VervpolySurface429Shape",
+      "polySurface429Shape",
+      "seathandleShape",
+      "foot_rest002",
+
+      "polySurface55Shape",
+      "partpolySurfaceShape298",
+      "partpolySurfaceShape298_1",
+      "polySurfaceShape218",
+      "pPlane5Shape",
+      "polySurface201Shape",
+      "polySurface301Shape",
+      "polySurfaceShape142",
+      "polySurface287Shape",
+      "polySurfaceShape138",
+      "polySurface90Shape",
+      "polySurfaceShape218",
+      "pPlane5Shape"
     ],
     "items": [
       {
@@ -49,7 +76,7 @@
         "label": "Headlamp",
         "title": "LED Headlamp",
         "desc": "Sleek LED headlamp...",
-        "meshName": ["FntLit_glassShape" ,"FntLit_glassShape001"],
+        "meshName": ["FntLit_glassShape", "FntLit_glassShape001"],
         "cameraOrbit": "-90deg 70deg 0.3m",
         "fieldOfView": "auto"
       },
@@ -99,8 +126,8 @@
         "label": "Motor",
         "title": "Motor",
         "desc": "Energy-efficient 800W BLDC hub motor providing reliable city performance.",
-        "meshName": ["polySurface494003" , "polySurfaceShape493"],
-       "cameraOrbit": "-90deg 80deg 2m"
+        "meshName": ["polySurface494003", "polySurfaceShape493"],
+        "cameraOrbit": "-90deg 80deg 2m"
       },
       {
         "id": "battery",
@@ -108,7 +135,7 @@
         "title": "Battery",
         "desc": "48V/60V battery pack for city rides with optimized power delivery.",
         "descElectrn": "72V advanced lead-acid power pack.",
-        "meshName": ["Battery_geo1002" , "Battery_geo4Shape"],
+        "meshName": ["Battery_geo1002", "Battery_geo4Shape"],
         "cameraOrbit": "-90deg 80deg 2m"
       },
       {
@@ -180,7 +207,7 @@
         "label": "Disc Brake",
         "title": "Disc Brake",
         "desc": "Safer halts, every ride with responsive braking performance.",
-        "meshName": ["diskShape" , "polySurface2967003"],
+        "meshName": ["diskShape", "polySurface2967003"],
         "cameraOrbit": "339deg 94deg 0.35m",
         "fieldOfView": "20deg"
       },
@@ -189,7 +216,7 @@
         "label": "Tubeless Tires",
         "title": "Tubeless Tires",
         "desc": "Long-lasting road performance with reduced puncture risk.",
-        "meshName": ["tyreShape" , "tyreShape001"],
+        "meshName": ["tyreShape", "tyreShape001"],
         "cameraOrbit": "406deg 81deg 0.35m",
         "fieldOfView": "20deg"
       },
@@ -255,7 +282,7 @@
         "label": "Suspension",
         "title": "Suspension",
         "desc": "Smooth riding on city streets with optimized shock absorption.",
-        "meshName": ["springShape" , "shockup_geo1Shape004"],
+        "meshName": ["springShape", "shockup_geo1Shape004"],
         "cameraOrbit": "414deg 109deg 0.35m",
         "fieldOfView": "20deg"
       }

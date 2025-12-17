@@ -2,7 +2,15 @@ import { openStorage, getStorageState, closeStorage } from "./storage-animation.
 
 let lastFocusedItem = null;
 
-export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cachedBikeCenter, modelOrientation ,modelSrc) {
+export async function focusOnMesh(
+  item,
+  viewer,
+  originalBikeCenter,
+  THREE,
+  cachedBikeCenter,
+  modelOrientation,
+  modelSrc
+) {
   console.log("🎯 Focus called for:", item.label, "| meshName:", item.meshName);
   console.log("📌 Last focused item:", lastFocusedItem);
 
@@ -14,19 +22,19 @@ export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cache
     console.log("🔍 Is same mesh?", isSameMesh);
 
     //  Open storage when focusing on storage compartment
-    if (item.id === "storage" && !modelSrc.includes("electrn.glb")) {
-      console.log("📦 Opening storage compartment...");
-      try {
-        openStorage(viewer, THREE, modelOrientation);
-      } catch (error) {
-        console.error("❌ Failed to open storage:", error);
-      }
-    }
+    // if (item.id === "storage" && !modelSrc.includes("electrn.glb")) {
+    //   console.log("📦 Opening storage compartment...");
+    //   try {
+    //     openStorage(viewer, THREE, modelOrientation);
+    //   } catch (error) {
+    //     console.error("❌ Failed to open storage:", error);
+    //   }
+    // }
 
     // Close storage if open when switching to different mesh
-    if (getStorageState() && item.meshName !== "SeatShape") {
-      await closeStorage(viewer, THREE, modelOrientation);
-    }
+    // if (getStorageState() && item.meshName !== "SeatShape") {
+    //   await closeStorage(viewer, THREE, modelOrientation);
+    // }
 
     if (!isSameMesh) {
       // Different mesh - do the full reset animation
@@ -104,8 +112,14 @@ export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cache
 
     let fixedCenter = new THREE.Vector3(0, normalizedY, cachedBikeCenter.z);
 
+    // Check if this is the problematic model
+    const isProblemModel = modelSrc.includes("verv.glb");
+
     if (item.meshName.includes("screen") || item.meshName.includes("display") || item.meshName.includes("usb")) {
       fixedCenter.y = center.y + 0.05;
+      if (isProblemModel) {
+        fixedCenter.y = center.y + 0.4;
+      }
     }
 
     if (item.meshName.includes("diskShape")) {
@@ -129,6 +143,10 @@ export async function focusOnMesh(item, viewer, originalBikeCenter, THREE, cache
 
     if (item.label.includes("Wheels")) {
       fixedCenter.x = center.x - 0.01;
+
+      if (isProblemModel) {
+        fixedCenter.y = center.y + 0.4;
+      }
     }
 
     viewer.timeScale = 0.5;

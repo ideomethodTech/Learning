@@ -82,7 +82,7 @@
         "label": "Headlamp",
         "title": "LED Headlamp",
         "desc": "Sleek LED headlamp...",
-        "meshName": ["FntLit_glassShape", "FntLit_glassShape001"],
+        "meshName": ["FntLit_glassShape", "FntLit_glassShape001" , "_FntLit_glassShape"],
         "cameraOrbit": "-90deg 70deg 0.3m",
         "fieldOfView": "auto"
       },
@@ -91,7 +91,7 @@
         "label": "Mirrors",
         "title": "Functional Mirrors",
         "desc": "Clean, functional design...",
-        "meshName": ["Mirror_glassShape", "Mirror_plastic3002", "Mirror_plastic4002" ,      "pCylinder28Shape"],
+        "meshName": ["Mirror_glassShape", "Mirror_plastic3002", "Mirror_plastic4002" ,   "pCylinder28Shape"],
         "cameraOrbit": "-245.4deg 50deg 0.415m",
         "fieldOfView": "21deg"
       },
@@ -132,7 +132,7 @@
         "label": "Motor",
         "title": "Motor",
         "desc": "Energy-efficient 800W BLDC hub motor providing reliable city performance.",
-        "meshName": ["polySurface494003", "polySurfaceShape493" , "polySurface287Shape"],
+        "meshName": ["polySurface494003", "polySurfaceShape493" , "polySurface287Shape" , "polySurface3010RedScooter_001Shape"],
         "cameraOrbit": "-90deg 80deg 2m"
       },
       {
@@ -213,7 +213,7 @@
         "label": "Disc Brake",
         "title": "Disc Brake",
         "desc": "Safer halts, every ride with responsive braking performance.",
-        "meshName": ["diskShape", "polySurface2967003"],
+        "meshName": ["diskShape", "polySurface2967003" , "pCylinder1002"],
         "cameraOrbit": "339deg 94deg 0.35m",
         "fieldOfView": "20deg"
       },

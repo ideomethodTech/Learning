@@ -122,18 +122,24 @@ export async function focusOnMesh(
       }
     }
 
-    if (item.meshName.includes("diskShape")) {
+    if (item.label.includes("Disc Brake")) {
       fixedCenter.y = center.y - 0.02;
       fixedCenter.x = center.x - 0.05;
     }
 
-    if (item.meshName.includes("tyreShape")) {
+    if (item.label.includes("Tubeless Tires")) {
       fixedCenter.y = center.y - 0.03;
       fixedCenter.x = center.x + 0.02;
+      if (isProblemModel) {
+        fixedCenter.y = center.y - 0.5;
+      }
     }
 
-    if (item.meshName.includes("sidestandShape")) {
+    if (item.label.includes("Side Stand Alert")) {
       fixedCenter.y = center.y - 0.03;
+      if (isProblemModel) {
+        fixedCenter.y = center.y - 0.5;
+      }
     }
 
     if (item.meshName.includes("buttonShape")) {

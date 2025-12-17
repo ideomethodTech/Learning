@@ -47,7 +47,13 @@
       "polySurfaceShape138",
       "polySurface90Shape",
       "polySurfaceShape218",
-      "pPlane5Shape"
+      "pPlane5Shape",
+      "polySurfaceShape138",
+      "polySurface55Shape",
+      "polySurface201Shape"
+
+
+      
     ],
     "items": [
       {
@@ -85,7 +91,7 @@
         "label": "Mirrors",
         "title": "Functional Mirrors",
         "desc": "Clean, functional design...",
-        "meshName": ["Mirror_glassShape", "Mirror_plastic3002", "Mirror_plastic4002"],
+        "meshName": ["Mirror_glassShape", "Mirror_plastic3002", "Mirror_plastic4002" ,      "pCylinder28Shape"],
         "cameraOrbit": "-245.4deg 50deg 0.415m",
         "fieldOfView": "21deg"
       },
@@ -126,7 +132,7 @@
         "label": "Motor",
         "title": "Motor",
         "desc": "Energy-efficient 800W BLDC hub motor providing reliable city performance.",
-        "meshName": ["polySurface494003", "polySurfaceShape493"],
+        "meshName": ["polySurface494003", "polySurfaceShape493" , "polySurface287Shape"],
         "cameraOrbit": "-90deg 80deg 2m"
       },
       {
@@ -135,7 +141,7 @@
         "title": "Battery",
         "desc": "48V/60V battery pack for city rides with optimized power delivery.",
         "descElectrn": "72V advanced lead-acid power pack.",
-        "meshName": ["Battery_geo1002", "Battery_geo4Shape"],
+        "meshName": ["Battery_geo1002", "Battery_geo4Shape" , "polySurface287Shape"],
         "cameraOrbit": "-90deg 80deg 2m"
       },
       {
@@ -184,7 +190,7 @@
         "label": "USB Charging",
         "title": "USB Charging",
         "desc": "Power for your gadgets on the go.",
-        "meshName": "usb_chargerShape",
+        "meshName": ["usb_chargerShape" , "screenShape"],
         "cameraOrbit": "-286deg 54deg 0.278m",
         "fieldOfView": "10deg"
       },
@@ -255,7 +261,7 @@
         "label": "Storage",
         "title": "Storage",
         "desc": "Enough space for daily carry-ons and essentials.",
-        "meshName": ["SeatShape", "polySurface3051002"],
+        "meshName": ["SeatShape", "polySurface3051002" , "seathandleShape"],
         "cameraOrbit": "34deg 62deg 0.29m",
         "fieldOfView": "25deg"
       },
@@ -282,7 +288,7 @@
         "label": "Suspension",
         "title": "Suspension",
         "desc": "Smooth riding on city streets with optimized shock absorption.",
-        "meshName": ["springShape", "shockup_geo1Shape004"],
+        "meshName": ["springShape", "shockup_geo1Shape004" ,"shockup_geo1Shape"],
         "cameraOrbit": "414deg 109deg 0.35m",
         "fieldOfView": "20deg"
       }

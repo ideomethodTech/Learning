@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: strapi-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapiPassword
+      POSTGRES_DB: strapi_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - strapi_data:/var/lib/postgresql/data
+
+volumes:
+  strapi_data:
